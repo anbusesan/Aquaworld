@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aqua World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(to right, rgba(0, 128, 255, 0.8), rgba(0, 212, 255, 0.8)), url('https://example.com/hero-image.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .intro-section {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #0077b6;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            color: #444;
+            margin-top: 20px;
+        }
+
+        .about-section h2 {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box {
+            position: relative;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 0.5rem;
+        }
+
+        .image-box:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .image-overlay p {
+            font-size: 1rem;
+        }
+
+        .card {
+            border-radius: 10px;
+        }
+
+        .card-title {
+            color: #343a40;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        .btn-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        .card-body {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .card-body h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .card-body ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card-body ul li {
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
+            margin-top: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: #00b4d8;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px;
+            background: #90e0ef;
+            color: #022451;
+            border-radius: 10px;
+            position: relative;
+            margin: 20px 0;
+            width: 45%;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 55%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #06414d;
+            border-radius: 50%;
+            top: 20px;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item.left::after {
+            left: 100%;
+        }
+
+        .timeline-item.right::after {
+            right: 100%;
+        }
+
+        .mission-vision-section {
+            background: rgba(5, 113, 113, 0.555);
+            padding: 60px 20px;
+        }
+
+        .mission-vision-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0077b6;
+        }
+
+        .mission-vision-list {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .mission-vision-item {
+            flex: 1 1 calc(50% - 20px);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .mission-vision-item h3 {
+            color: #03045e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Aqua World</h1>
+            <p class="hero-tagline">Discover Aqua World's history & aquatic wonders</p>
+            <a href="#about"><button class="btn btn-light px-4 py-2">Explore Now</button></a>
+        </div>
+    </div>
+
+<div id="about" class="about-section bg-light py-5">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-primary font-weight-bold mb-5">
+            About Aqua World
+        </h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <div class="image-box position-relative">
+                    <img src="images/about.jpg" alt="Aqua World Image" class="img-fluid rounded shadow-lg">
+                    <div class="image-overlay text-white text-center">
+                        <h3 class="font-weight-bold">Dive Into the Ocean</h3>
+                        <p>Experience marine life like never before!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="lead">
+                    Aqua World is more than an aquarium; it's a vibrant celebration of marine biodiversity and an interactive journey through the wonders of the ocean. Whether you're a family seeking a fun day out, a student eager to learn, or a marine enthusiast fascinated by the ocean, Aqua World has something for everyone.
+                </p>
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item bg-transparent">
+                        <i class="bi bi-star-fill text-primary"></i> Home to over 10,000 aquatic species.
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                        <i class="bi bi-star-fill text-primary"></i> Interactive zones, including touch pools and feeding sessions.
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                        <i class="bi bi-star-fill text-primary"></i> Educational programs for all ages.
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                        <i class="bi bi-star-fill text-primary"></i> Conservation initiatives to protect marine ecosystems.
+                    </li>
+                </ul>
+                <button class="btn btn-primary btn-lg px-5 py-2" data-bs-toggle="collapse" data-bs-target="#accordion" aria-expanded="false" aria-controls="accordion">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+        <div id="accordion" class="row mt-5 collapse" aria-labelledby="headingOne">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"  aria-expanded="true" aria-controls="collapseOne">
+                                    Origin of Aquarium
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapsed" aria-labelledby="headingOne" data-bs-parent="#accordion" aria-expanded="true">
+                            <div class="card-body ">
+                                <h4 class="text-primary">Ancient Beginnings</h4>
+                                <ul class="list-unstyled">
+                                    <li><strong>Mesopotamia (2500 BCE):</strong> The earliest known fish ponds were created in Mesopotamia, where fish were kept for food and religious purposes. </li>
+                                    <li><strong>Egypt (1500 BCE):</strong> The ancient Egyptians kept fish in temple pools and private gardens. They saw fish as sacred symbols and decorative additions to their luxurious estates.</li>
+                                    <li><strong>China (1000 BCE):</strong> The Chinese pioneered the art of ornamental fishkeeping, breeding goldfish in decorative ponds and jars.</li>
+                                </ul>
+                                <h4 class="text-primary mt-4">The Renaissance Period</h4>
+                                <p>
+                                    With the development of glassblowing techniques during the Renaissance, people began using glass containers to observe aquatic life indoors. This innovation laid the foundation for modern aquariums.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    The Evolution of Modern Aquariums
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapsed" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <h4 class="text-primary">19th Century Innovations</h4>
+                                <ul class="list-unstyled">
+                                    <li><strong>1840s:</strong> The invention of the first glass aquariums in England marked the beginning of modern aquarium culture. These were initially used to study aquatic life in controlled environments.</li>
+                                    <li><strong>1853:</strong> The London Zoo opened the first public aquarium, called the "Fish House," inspiring similar establishments worldwide.</li>
+                                    <li><strong>1880s:</strong> Advances in aeration and water circulation improved the viability of aquariums, allowing for a broader range of species to thrive.</li>
+                                </ul>
+                                <h4 class="text-primary mt-4">20th Century Advancements</h4>
+                                <p>
+                                    The 20th century saw rapid progress in aquarium technology, including filtration systems, artificial lighting, and temperature controls. These advancements made home aquariums more accessible and diverse, 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    History of Aqua World
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapsed" aria-labelledby="headingThree" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <h4 class="text-primary">Our Journey</h4>
+                                <ul class="list-unstyled">
+                                    <li><strong>2010:</strong> Aqua World was founded with a mission to bring marine ecosystems to landlocked communities, offering educational and conservation-focused experiences.</li>
+                                    <li><strong>2012:</strong> Opened to the public with over 100 species on display, including rare and exotic marine life.</li>
+                                    <li><strong>2015:</strong> Introduced a groundbreaking coral restoration project in partnership with Ocean Conservation Trust.</li>
+                                    <li><strong>2020:</strong> Launched interactive virtual tours, reaching global audiences during the pandemic.</li>
+                                </ul>
+                                <p>
+                                    Today, Aqua World continues to innovate, combining education, conservation, and entertainment to inspire people to care for our oceans and the life within them.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+
+    <div class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">Our History</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <h3>2010</h3>
+                    <p>Founded with a mission to bring marine ecosystems to landlocked communities.</p>
+                </div>
+                <div class="timeline-item right">
+                    <h3>2012</h3>
+                    <p>Opened to the public with over 100 species on display.</p>
+                </div>
+                <div class="timeline-item left">
+                    <h3>2015</h3>
+                    <p>Introduced a groundbreaking coral restoration project in partnership with Ocean Conservation Trust.</p>
+                </div>
+                <div class="timeline-item right">
+                    <h3>2020</h3>
+                    <p>Launched interactive virtual tours, reaching global audiences during the pandemic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section mission-vision-section">
+        <h2>Mission and Vision</h2>
+        <div class="mission-vision-list">
+            <div class="mission-vision-item">
+                <h3>Mission</h3>
+                <p>To protect marine biodiversity by promoting education, research, and conservation efforts globally.</p>
+            </div>
+            <div class="mission-vision-item">
+                <h3>Vision</h3>
+                <p>To create a future where marine ecosystems thrive and every individual values the importance of aquatic life.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+</html>

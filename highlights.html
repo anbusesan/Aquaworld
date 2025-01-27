@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarium Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+.adventure-img {
+    max-width: 50%;
+    height: auto;
+}
+
+.home{
+    background-color: #1758c2df;
+}
+
+#dolphin {
+    color: #004d73;
+}
+
+#dolphin .heading {
+    color: #0078b3;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#dolphin h2 {
+    color: #005f99;
+    text-decoration: underline;
+}
+
+#dolphin p {
+    color: #003d5c;
+    font-size: 1.1rem;
+}
+
+#dolphin ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: #004d73;
+}
+
+#dolphin .btn-primary {
+    background-color: #0078b3;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#dolphin .btn-primary:hover {
+    background-color: #005f99;
+}
+
+#dolphin img {
+    border-radius: 10px;
+}
+
+#dolphinModal .modal-content {
+    border-radius: 15px;
+    border: 2px solid #0078b3;
+    background: linear-gradient(to bottom right, #e6f7ff, #ffffff);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#dolphinModal .modal-header {
+    background: #0078b3;
+    color: #fff;
+}
+
+#dolphinModal .modal-title {
+    font-weight: bold;
+    color: #fff;
+}
+
+#dolphinModal .modal-body {
+    background: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#dolphinModal .modal-footer {
+    background: #e6f7ff;
+}
+
+#dolphinModal .btn-secondary {
+    background-color: #005f99;
+    border: none;
+    font-weight: bold;
+}
+
+#dolphinModal .btn-secondary:hover {
+    background-color: #004d73;
+}
+
+#dolphinModal ul {
+    list-style: circle;
+    margin-left: 20px;
+    color: #004d73;
+}
+
+#dolphinModal h5 {
+    color: #0078b3;
+    font-weight: bold;
+}
+
+.service {
+    padding: 30px 0;
+    background: linear-gradient(135deg, #1b9ac8, #abd2f5);
+    color: #fff;
+}
+
+.heading {
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+   
+}
+
+.service h2 {
+    font-size: 2rem;
+    color: #002e4e;
+    font-weight: bold;
+}
+
+.service p {
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.adbtn {
+    background-color: #003d99;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.adbtn:hover {
+    background-color: #ff9900;
+    color: #fff;
+}
+
+.modal-header {
+    background-color: #003d99;
+    color: #fff;
+}
+
+.modal-body img {
+    border: 3px solid #014f86;
+    margin-bottom: 20px;
+}
+
+.text-primary {
+    color: #ffcc00 !important;
+}
+
+.text-success {
+    color: #80ffaa !important;
+}
+
+.text-warning {
+    color: #ffcc66 !important;
+}
+
+.text-danger {
+    color: #ff6347 !important;
+}
+
+.text-info {
+    color: #87cefa !important;
+}
+
+.team {
+    background-color: #e0f7fa;
+}
+
+.team .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team .card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+
+.team .info {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.team .info h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #00363a;
+}
+
+.team .info p {
+    font-size: 1rem;
+    color: #00363a;
+}
+
+.team .icons a {
+    font-size: 1.25rem;
+    color: #00363a;
+    text-decoration: none;
+}
+
+.team .icons a:hover {
+    color: #006064;
+}
+
+.faq {
+    background-color: #f0f4f8;
+}
+
+.faq .subject-header {
+    background-color: #0288d1;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.faq .subject-header h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.faq .subject-body p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.faq .subject-header span {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.faq .subject-body {
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    display: none;
+}
+
+.faq .subject-header:hover .subject-body {
+    display: block;
+}
+
+.faq .subject-body p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.highlight-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0288d1;
+}
+
+.highlight-subheading {
+    font-size: 1.2rem;
+    color: #616161;
+}
+
+.highlight-card {
+    border: none;
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0288d1;
+}
+
+.highlight-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.highlight-card:hover .highlight-img {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="header bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand fs-4">
+                    <i class="fas fa-fish me-2"></i>AQUA
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#dolphin" class="nav-link">Dolphin Dance-Off</a></li>
+                        <li class="nav-item"><a href="#adventure" class="nav-link">Aqua Adventures</a></li>
+                        <li class="nav-item"><a href="#team" class="nav-link">Our Team</a></li>
+                        <li class="nav-item"><a href="#wonders" class="nav-link">Aqua Wonders</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="home text-center d-flex flex-column justify-content-center align-items-center vh-100 text-white">
+        <h1 class="banner fs-1 fw-bold">Discover The Aqua Highlights</h1>
+        <h2 class="slogan fs-4 fw-light my-3">From thrilling adventures and mesmerizing wonders to exciting dolphin dances</h2>
+        <a href="#dolphin"><button class="btn btn-light px-4 py-2">Explore Now</button></a>
+    </section>
+
+<section id="dolphin" class="about py-5">
+    <div class="container">
+        <h1 class="heading text-center mb-4">Dolphin Dance-Off</h1>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fs-3">Dolphin Groove Challenge</h2>
+                <p class="text-muted">
+                    Dive into a world of rhythm and waves! The Dolphin Dance-Off is your chance to connect with nature in a playful way. Mimic the fluid, elegant moves of dolphins as you compete or simply enjoy the groove solo. Learn about these intelligent creatures and their fascinating communication skills while having a whale of a time. Fun, rewards, and ocean vibes await you—let’s dance!
+                </p>
+                <ul>
+                    <li>Learn about dolphin communication through dance.</li>
+                    <li>Compete with friends for exciting prizes.</li>
+                    <li>Enjoy an immersive experience with a playful twist.</li>
+                </ul>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dolphinModal">
+                    Read More
+                </button>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="images/pexels-samuel-phillips-2148550424-30186811.jpg" alt="Dolphin Dance-Off" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="dolphinModal" tabindex="-1" aria-labelledby="dolphinModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dolphinModalLabel">Dolphin Groove Challenge - More Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-3">
+                    <video width="100%" height="400" controls autoplay loop muted>
+                        <source src="images/dolphin vedio.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><strong>What to Expect:</strong></h5>
+                        <ul>
+                            <li>Step-by-step dance tutorials inspired by dolphins.</li>
+                            <li>Interactive sessions with marine experts.</li>
+                            <li>Exclusive rewards for top performers.</li>
+                            <li>A memorable experience for all ages!</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><strong>Tips to Win the Game:</strong></h5>
+                        <ul>
+                            <li>Observe dolphin movements closely for inspiration.</li>
+                            <li>Practice syncing your moves with the rhythm.</li>
+                            <li>Focus on creativity and fluidity in your performance.</li>
+                            <li>Engage the audience with enthusiasm and energy.</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="text-center mt-4"><strong>Dolphin Book Recommendations:</strong></h5>
+                    <ul>
+                        <li><strong>The Dolphin Way</strong> by Shalini Boland - Learn about dolphin behavior and their communication skills.</li>
+                        <li><strong>Voices in the Ocean</strong> by Susan Casey - Dive into stories of human connections with dolphins.</li>
+                        <li><strong>Dolphin Diaries</strong> by Dr. Denise Herzing - A researcher’s journey into dolphin intelligence.</li>
+                        <li><strong>The Smile of a Dolphin</strong> by Mark Carwardine - Beautiful photographs and fascinating facts about dolphins.</li>
+                    </ul>
+                    <p class="text-muted">Reading these books can enhance your understanding of dolphin behavior, helping you perform better in the Dolphin Dance-Off by mimicking their moves and rhythms more effectively!</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="adventure" class="service">
+    <div class="container">
+        <h1 class="heading text-center">Aqua Adventures</h1>
+  
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="images/pexels-svetlana-obysova-53438837-7759163.jpg" alt="Treasure Hunt Underwater" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2>Treasure Hunt Underwater</h2>
+                <p>Dive into an enchanting underwater world where mysteries await! Our Underwater Treasure Hunt is a thrilling experience designed for explorers of all ages. Navigate through vibrant coral reefs, discover ancient shipwrecks, and uncover hidden treasures buried beneath the waves. Each step of the journey is filled with exciting clues and challenges, leading you closer to the ultimate prize. Along the way, you'll encounter fascinating marine life and breathtaking aquatic landscapes that make this adventure truly unforgettable. Are you ready to embark on the most exciting treasure hunt of your life?
+                </p>
+            </div>
+        </div>
+  
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="images/pexels-alohaphotostudio-6961669.jpg" alt="Shark Escape Maze" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2>Shark Escape Maze</h2>
+                <p>Get ready for a heart-pounding adventure in the Shark Escape Maze! Navigate your way through an intricate underwater labyrinth while avoiding the jaws of lurking sharks. This maze is designed to test your instincts, speed, and strategy as you swim through winding pathways, hidden tunnels, and coral-covered obstacles. Along the way, discover secret escape routes and clever clues that will lead you to safety. Will you make it out before the sharks close in? Dive in and find out—if you dare!
+                </p>
+            </div>
+        </div>
+  
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="images/pexels-jibarofoto-2833037.jpg" alt="Marine Life Quiz Show" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2>Marine Life Quiz Show</h2>
+                <p>Test your knowledge of the ocean’s wonders with our interactive Marine Life Quiz Show! Dive into an exciting trivia challenge featuring fascinating facts about marine creatures, underwater ecosystems, and ocean conservation. With questions designed for all ages, this quiz is perfect for families, friends, and curious minds. Compete against others or take the challenge solo to see how much you really know about the mysteries of the deep. Fun, educational, and full of surprises—are you ready to become the ultimate marine life expert?</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="team py-3" style="background-color: #e0f7fa;">
+    <h1 class="heading text-center mb-2" style="font-size: 2.5rem; font-weight: bold; color: #006064;">Meet Our Team</h1>
+    <p class="text-center mb-4" style="font-size: 1.2rem; color: #004d40;">We are a passionate team of marine enthusiasts dedicated to preserving the oceans and educating the world about marine life. Get to know the individuals who are making it all happen! Together, we strive to inspire positive change and foster a deeper connection with our incredible underwater world.</p>
+  
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card border-0 shadow-lg">
+                    <div class="images">
+                        <img src="https://i.pinimg.com/736x/fd/28/43/fd28437ae2ae72f04b1f0cde988d1253.jpg" alt="Person 1" class="card-img-top">
+                    </div>
+                    <div class="info text-center p-4" style="background-color: #80deea;">
+                        <h2 class="text-primary">John Doe</h2>
+                        <p style="font-size: 1.1rem; color: #004d40;">Marine Biologist & Conservationist</p>
+                        <p style="color: #004d40;">John has spent years studying ocean ecosystems and is passionate about marine conservation. He leads our research team and advocates for ocean protection.</p>
+                        <div class="icons">
+                            <a href="#" class="fab fa-facebook-f mx-2" style="color: #006064;"></a>
+                            <a href="#" class="fab fa-twitter mx-2" style="color: #006064;"></a>
+                            <a href="#" class="fab fa-instagram mx-2" style="color: #006064;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card border-0 shadow-lg">
+                    <div class="images">
+                        <img src="https://th.bing.com/th/id/OIP.nMCMvMaQDXl-MTUKJRAf_QHaHa?w=512&h=512&rs=1&pid=ImgDetMain" alt="Person 2" class="card-img-top">
+                    </div>
+                    <div class="info text-center p-4" style="background-color: #ffcc80f9;">
+                        <h2 style="color:orangered;">Emily Adams</h2>
+                        <p style="font-size: 1.1rem; color: #3e2723;">Underwater Photographer</p>
+                        <p style="color: #3e2723;">Emily captures the beauty of the ocean through her lens. She documents marine life and helps raise awareness about the challenges faced by underwater ecosystems.</p>
+                        <div class="icons">
+                            <a href="#" class="fab fa-facebook-f mx-2" style="color: #3e2723;"></a>
+                            <a href="#" class="fab fa-twitter mx-2" style="color: #3e2723;"></a>
+                            <a href="#" class="fab fa-instagram mx-2" style="color: #3e2723;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card border-0 shadow-lg">
+                    <div class="images">
+                        <img src="https://th.bing.com/th/id/OIP.KQfobXgQ-7qL8k-EnGPPwgHaGv?w=1280&h=1164&rs=1&pid=ImgDetMain" alt="Person 3" class="card-img-top">
+                    </div>
+                    <div class="info text-center p-4" style="background-color: #ffeb3b7f;">
+                        <h2 class="text-dark">Mark Smith</h2>
+                        <p style="font-size: 1.1rem; color: #3e2723;">Marine Ecologist</p>
+                        <p style="color: #3e2723;">Mark Smith is focused on the delicate balance of the marine ecosystems. His research helps us understand the interconnection of species and the health of ocean habitats in the modern era.</p>
+                        <div class="icons">
+                            <a href="#" class="fab fa-facebook-f mx-2" style="color: #3e2723;"></a>
+                            <a href="#" class="fab fa-twitter mx-2" style="color: #3e2723;"></a>
+                            <a href="#" class="fab fa-instagram mx-2" style="color: #3e2723;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card border-0 shadow-lg">
+                    <div class="images">
+                        <img src="https://www.rejuv.ca/wp-content/uploads/2022/09/sophia_lee.jpg" alt="Person 4" class="card-img-top">
+                    </div>
+                    <div class="info text-center p-4" style="background-color: #aed581;">
+                        <h2 class="text-dark">Sophia Lee</h2>
+                        <p style="font-size: 1.1rem; color: #1b5e20;">Environmental Advocate</p>
+                        <p style="color: #1b5e20;">Sophia Lee fights for marine protection laws and public awareness. She works with local communities to promote sustainable practices and reduce pollution.</p>
+                        <div class="icons">
+                            <a href="#" class="fab fa-facebook-f mx-2" style="color: #1b5e20;"></a>
+                            <a href="#" class="fab fa-twitter mx-2" style="color: #1b5e20;"></a>
+                            <a href="#" class="fab fa-instagram mx-2" style="color: #1b5e20;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <section id="faq" class="faq py-5" style="background-color: #f4f7fa;">
+    <h1 class="heading text-center mb-5" style="font-size: 2.5rem; font-weight: bold; color: #0288d1;">Frequently Asked Questions</h1>
+  
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                What is Aqua World?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Aqua World is an aquatic adventure park that offers a range of experiences, from interactive marine life exhibits to underwater activities. It’s designed to educate and inspire people about ocean conservation while providing fun and educational experiences for all ages.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How do I get tickets for Aqua World?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                You can buy tickets online via our official website or at the entrance. We also offer discounted tickets for students, senior citizens, and groups of 10 or more. Make sure to check out our special promotions throughout the year!
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Are there guided tours available?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Yes, we offer guided tours led by marine biologists and experienced educators. You can choose between group tours or private guided experiences. The tours cover various marine ecosystems and conservation efforts that Aqua World supports.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Is Aqua World family-friendly?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Definitely! Aqua World is designed for visitors of all ages. There are dedicated spaces for children to interact with marine life, touch tanks, and fun educational activities. Our family-friendly events ensure a memorable day for everyone.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                What should I bring to Aqua World?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                We recommend wearing comfortable clothing and shoes suitable for walking. If you plan to visit the splash zones or interact with the water exhibits, waterproof footwear is ideal. Don’t forget your camera to capture all the wonderful memories!
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Can I host events at Aqua World?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Yes! Aqua World offers event spaces that can be customized for various events such as birthday parties, corporate events, and educational programs. You can choose from our special underwater viewing rooms or outdoor event spaces with scenic views.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Is there parking available?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Yes, Aqua World offers plenty of parking for visitors. There are both open-air and covered parking options available. Parking is free for all visitors for the first 3 hours, after which standard rates apply.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Do you have food and beverage services?
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Yes, Aqua World has a variety of food and beverage options. Whether you are craving a light snack or a full meal, we offer delicious food at our café and kiosks. Vegan, vegetarian, and gluten-free options are also available.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingNine">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                What are the opening hours of Aqua World?
+                            </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                Aqua World is open every day from 9:00 AM to 7:00 PM. Special hours may apply on public holidays, so please check our website or social media for updates before planning your visit.
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingTen">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                Can I bring my pets to Aqua World?
+                            </button>
+                        </h2>
+                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light p-3">
+                                For the safety and comfort of all visitors, we do not allow pets inside Aqua World. However, service animals are welcome to accompany guests with disabilities.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <div id="wonders" class="container my-5">
+    <h1 class="text-center mb-4 highlight-heading">Highlights</h1>
+    <p class="text-center lead highlight-subheading">Discover unique experiences, shows, and marine exhibits.</p>
+  
+    <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="card highlight-card shadow-lg rounded">
+                <img src="images/imgf24.jpg" alt="Tropical Fish Exhibit" class="card-img-top highlight-img">
+                <div class="card-body">
+                    <h5 class="highlight-title">Tropical Fish Exhibit</h5>
+                    <p class="card-text">Immerse yourself in the vibrant colors and diverse species of tropical fish from around the world.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="card highlight-card shadow-lg rounded">
+                <img src="images/shark.jpg" alt="Shark Tunnel" class="card-img-top highlight-img">
+                <div class="card-body">
+                    <h5 class="highlight-title">Shark Tunnel</h5>
+                    <p class="card-text">Walk through an underwater tunnel surrounded by majestic sharks and other marine life.</p>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="card highlight-card shadow-lg rounded">
+                <img src="images/waterpool.jpg" alt="Interactive Touch Pool" class="card-img-top highlight-img">
+                <div class="card-body">
+                    <h5 class="highlight-title">Interactive Touch Pool</h5>
+                    <p class="card-text">Get hands-on with starfish, sea urchins, and other fascinating marine creatures.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <footer class="bg-dark text-white py-2">
+    <div class="container mt-2">
+        <div class="row text-center text-md-start align-items-center">
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold">Our Address</h5>
+                <p>123 Ocean Drive, SeaWorld, Aquatic City</p>
+                <p>Email: <a href="mailto:info@marineworld.com" class="text-white text-decoration-underline">info@marineworld.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="text-white text-decoration-underline">+1 234 567 890</a></p>
+            </div>
+  
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                    <li><a href="highlights.html" class="text-white text-decoration-none">Highlights</a></li>
+                    <li><a href="contactus.html" class="text-white text-decoration-none">Contact</a></li>
+                    <li><a href="virtual.html" class="text-white text-decoration-none">Virtual Tour</a></li>
+                </ul>
+            </div>
+  
+            <div class="col-12 col-md-4">
+                <h5 class="fw-bold">Connect with Us</h5>
+                <div>
+                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-light">
+        <div class="row text-center mt-3">
+            <div class="col">
+                <p class="mt-1 fw-bold" style="font-size: 20px;">&copy; 2025 MarineWorld. All Rights Reserved.</p>
+                <p class="mb-2">Designed with <i class="fas fa-heart text-danger"></i> by MarineWorld Team.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
