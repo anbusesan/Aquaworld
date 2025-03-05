@@ -242,6 +242,7 @@
   </div>
 </section>
 
+<!-- Student Discount Section -->
 <section class="student-discount-section py-5">
   <div class="container">
     <div class="row align-items-center">
@@ -252,8 +253,8 @@
           Discover the wonders of Aqua World at an affordable price.
         </p>
         <p class="validity">*Valid until: <strong>31st March 2025</strong></p>
-        
-        <!-- Additional Content: Testimonials -->
+
+        <!-- Testimonials -->
         <div class="testimonials mt-4">
           <h4 class="testimonial-title">What Students Are Saying</h4>
           <div class="testimonial-slider">
@@ -270,20 +271,18 @@
 
         <!-- CTA Button -->
         <div class="cta-button mt-4 text-center">
-          <a href="#claim-discount" class="btn btn-primary btn-lg">Claim Your Discount Now</a>
+          <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#studentModal">Claim Your Discount Now</button>
         </div>
       </div>
 
-      <!-- New Content on the Right -->
+      <!-- Right Side Content -->
       <div class="col-md-6 text-center">
-        <!-- Limited Time Offer Section -->
         <div class="special-offer-box mb-4">
           <h3 class="special-offer-title">Limited Time Offer!</h3>
           <p class="special-offer-description">Get an additional 10% off on group bookings of 5 or more students!</p>
-          <a href="#group-discount" class="btn btn-warning btn-lg">Group Discount Details</a>
+          <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#groupDiscountModal">Group Discount Details</button>
         </div>
 
-        <!-- Circular Discount Box -->
         <div class="save-box mx-auto">
           <h3 class="save-text">SAVE</h3>
           <h1 class="percentage">30%</h1>
@@ -294,48 +293,158 @@
   </div>
 </section>
 
+<!-- Modal for Student Discount Form -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="studentModalLabel">Student Discount Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>University/College</th>
+                <th>Student ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" class="form-control" placeholder="Enter Name"></td>
+                <td><input type="email" class="form-control" placeholder="Enter Email"></td>
+                <td><input type="text" class="form-control" placeholder="Enter College Name"></td>
+                <td><input type="text" class="form-control" placeholder="Enter Student ID"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#studentSuccessModal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<section id=more class="explore-more-section bg-light">
+<!-- Modal for Group Discount Form -->
+<div class="modal fade" id="groupDiscountModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="studentModalLabel">Student Discount Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>University/College</th>
+                <th>Student ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" class="form-control" placeholder="Enter Name"></td>
+                <td><input type="email" class="form-control" placeholder="Enter Email"></td>
+                <td><input type="text" class="form-control" placeholder="Enter College Name"></td>
+                <td><input type="text" class="form-control" placeholder="Enter Student ID"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#studentSuccessModal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal for Student Discount -->
+<div class="modal fade" id="studentSuccessModal" tabindex="-1" aria-labelledby="studentSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title w-100" id="studentSuccessModalLabel">🎉 Discount Claimed! 🎉</h5>
+      </div>
+      <div class="modal-body">
+        <p>Your student discount has been successfully registered!</p>
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal for Group Discount -->
+<div class="modal fade" id="groupSuccessModal" tabindex="-1" aria-labelledby="groupSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title w-100" id="groupSuccessModalLabel">🎉 Group Discount Claimed! 🎉</h5>
+      </div>
+      <div class="modal-body">
+        <p>Your group discount has been successfully registered!</p>
+      </div>
+      <div class="modal-footer border-0 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="explore-more-section">
   <h2 class="mb-5">Explore More</h2>
   <div class="container">
     <div class="row g-4 cen">
       <div class="col-md-3">
         <div class="card explore-more-card">
-          <img src="images/about.jpg" alt="About Aqua World" class="card-img-top">
+          <img src="images/aquatunnel.png" alt="About Aqua World" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">About Aqua World</h5>
             <p class="card-text">Learn about our vision, mission, and the wonders of Aqua World.</p>
-            <a href="about.html" class="btn btn-explore-more">Read More</a>
+            <a href="about.html" class="btn-explore-more">KNOW MORE</a>
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="card explore-more-card">
-          <img src="images/highlights.jpg" alt="Highlights" class="card-img-top">
+          <img src="images/highlightdol.jpg" alt="Highlights" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Highlights</h5>
             <p class="card-text">Discover unique experiences, shows, and marine exhibits.</p>
-            <a href="highlights.html" class="btn btn-explore-more">Explore</a>
+            <a href="highlights.html" class="btn-explore-more">EXPLORE</a>
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="card explore-more-card">
-          <img src="images/gamec1.jpg" alt="Games World" class="card-img-top">
+          <img src="images/waterslidegame.jpg" alt="Games World" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Games World</h5>
             <p class="card-text">Discover a realm of fun and excitement.</p>
-            <a href="games.html" class="btn btn-explore-more">Ride</a>
+            <a href="games.html" class="btn-explore-more">RIDE</a>
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="card explore-more-card">
-          <img src="images/gamec1.jpg" alt="Games World" class="card-img-top">
+          <img src="images/scoobadive.jpg" alt="Games World" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">Games World</h5>
+            <h5 class="card-title">Virtual Tour</h5>
             <p class="card-text">Discover a realm of fun and excitement.</p>
-            <a href="games.html" class="btn btn-explore-more">Ride</a>
+            <a href="games.html" class="btn-explore-more">VISIT</a>
           </div>
         </div>
       </div>
@@ -360,6 +469,7 @@
                     <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
                     <li><a href="highlights.html" class="text-white text-decoration-none">Highlights</a></li>
                     <li><a href="contactus.html" class="text-white text-decoration-none">Contact</a></li>
+                    <li><a href="games.html" class="text-white text-decoration-none">Games World</a></li>
                     <li><a href="virtual.html" class="text-white text-decoration-none">Virtual Tour</a></li>
                 </ul>
             </div>

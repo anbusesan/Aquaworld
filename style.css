@@ -1,5 +1,5 @@
 .bg {
-  background-color: #002855;
+  background-color: #002145;
 }
 
 .bg .nav-link {
@@ -277,37 +277,7 @@ header p {
   padding: 40px 0;
   color: rgb(19, 1, 1);
   text-align: center;
-  background: linear-gradient(135deg, #add8e6, #e0f7fa);
-}
-
-.btn-exp{
-  background-color: #003d99;
-    border: none;
-    font-size: 1rem;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-
-/* Button Styling Class */
-.btn-explore-more {
-  background: #ff5733; /* Orange color */
-  color: #570404;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  transition: background 0.3s ease;
-  text-transform: uppercase;
-  
-}
-
-.btn-explore-more:hover {
-  background: #c84d2e; /* Darker shade of orange */
+  background: linear-gradient(135deg, #add8e662, #e0f7fa9f);
 }
 
 /* Flexbox Layout for 4 Cards in One Row */
@@ -341,6 +311,29 @@ header p {
   padding: 20px;
   text-align: center;
 }
+
+/* New Button Styling */
+.btn-explore-more {
+  background-color: transparent; /* Transparent background */
+  color: #00796b; /* Teal text color */
+  padding: 12px 25px;
+  border: 2px solid #00796b; /* Border color matching text */
+  border-radius: 30px; /* More rounded button */
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Space between letters */
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-explore-more:hover {
+  background-color: #00796b; /* Background color on hover */
+  color: white; /* Text color turns white */
+  border-color: #004d40; /* Border color changes on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
 
 /* Gallery Section Styling */
 #gallery {
@@ -555,3 +548,25 @@ header p {
   background: linear-gradient(135deg, #b8e6f1, #d4f1f9);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+
+#studentSuccessModal .modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 10px;
+  animation: popUp 0.5s ease-in-out;
+}
+
+#groupSuccessModal .modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 10px;
+  animation: popUp 0.5s ease-in-out;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+
