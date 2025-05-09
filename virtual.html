@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - Aqua World</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #102542;
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .navbar {
+            background: linear-gradient(to right, #003973, #E5E5BE);
+            padding: 15px;
+        }
+    
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+    
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+    
+        .nav-link:hover {
+            color: #ffcc70 !important;
+        }
+    
+        .tour-section {
+            padding: 60px 20px;
+        }
+    
+        #tour {
+            background: linear-gradient(to right top, #1f3b73, #1cb5e0);
+        }
+    
+        #features {
+            background: linear-gradient(to right, #09203f, #537895);
+        }
+    
+        #features .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            transition: transform 0.3s;
+            color: #ffffff;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    
+        .feature-box:hover {
+            transform: scale(1.05);
+        }
+    
+        .feature-box i {
+            margin-bottom: 15px;
+            color: #ffcc70;
+        }
+    
+        h1, h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+    
+        h4 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+    
+        p {
+            font-size: 1.1rem;
+        }
+    
+        /* SAFETY Section Background - Blue Animated Wave */
+        #safety {
+            background: linear-gradient(-45deg, #42728a85, #09a2eeb4, #3d27b698, #42728a85);
+            background-size: 800% 800%;
+            animation: waveEffect 20s ease infinite;
+            padding: 60px 20px;
+            color: white;
+            position: relative;
+        }
+    
+        @keyframes waveEffect {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 0%; }
+            100% { background-position: 0% 50%; }
+        }
+    
+        #safety .feature-box {
+            background: rgba(255, 0, 0, 0.25); /* light red glassy */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    
+        #safety .feature-box i {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+    
+        /* Buttons */
+        .btn-custom {
+            background-color: #ffffff;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+    
+        .btn-custom:hover {
+            background-color: #000;
+            color: white;
+        }
+    
+        #safety .btn-custom {
+            background-color: #ffdd57;
+            color: #000;
+        }
+    
+        #safety .btn-custom:hover {
+            background-color: #ffd000;
+            color: #111;
+        }
+    
+        /* Additional Insights Box */
+        .additional-content {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+    
+        footer {
+            background: linear-gradient(to right, #001f3f, #1a2980);
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ddd;
+        }
+    
+        video {
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            margin-top: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aqua World - Virtual Tour</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#tour">Tour</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="tour" class="tour-section">
+        <div class="container">
+            <h1 class="fw-bold">Explore the Beauty of Aqua World</h1>
+            <video class="d-block w-100" autoplay loop muted>
+                <source src="images/2558530-hd_1920_1080_25fps.mp4">
+            </video>
+        </div>
+    </section>
+
+    <section id="features" class="tour-section">
+        <div class="container">
+            <h2 class="fw-bold">Virtual Tour Features</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-fish fa-3x"></i>
+                        <h4>Realistic 3D View</h4>
+                        <p>Experience an immersive underwater world like never before.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-water fa-3x"></i>
+                        <h4>Interactive Exploration</h4>
+                        <p>Click and explore different aquatic zones with detailed information.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-vr-cardboard fa-3x"></i>
+                        <h4>VR Compatible</h4>
+                        <p>Enjoy the virtual tour in 360° with VR headset support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety" class="tour-section">
+        <div class="container">
+            <h2 class="fw-bold">Safety in Virtual Tours</h2>
+            <div class="feature-box">
+                <i class="fas fa-shield-alt fa-3x"></i>
+                <h4>Ensuring a Safe and Secure Experience</h4>
+                <p>Virtual tours provide a risk-free way to explore underwater worlds, ensuring user safety and comfort at all times.</p>
+                <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#safetyModal">Read More</button>
+            </div>
+            <div class="additional-content">
+                <h4>Additional Insights</h4>
+                <p>Our virtual tour also includes guided narration, educational content, and interactive storytelling to enhance your experience.</p>
+            </div>
+        </div>
+    </section>
+    <section id="extra-content" class="tour-section">
+        <div class="container">
+            <h2 class="fw-bold">Why Choose Aqua World?</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p>Our virtual tours are designed to provide an unparalleled experience, combining cutting-edge technology with stunning visuals. Dive into the depths of the ocean and explore marine life like never before.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Whether you're an enthusiast, a student, or just curious, Aqua World offers something for everyone. Learn, explore, and be amazed by the wonders of the underwater world.</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-anchor fa-3x"></i>
+                        <h4>Educational Insights</h4>
+                        <p>Gain knowledge about marine ecosystems, species, and conservation efforts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-globe fa-3x"></i>
+                        <h4>Global Access</h4>
+                        <p>Explore the underwater world from anywhere in the world, anytime.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-heart fa-3x"></i>
+                        <h4>Eco-Friendly</h4>
+                        <p>Experience the beauty of marine life without disturbing their natural habitat.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-custom mt-4" onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
+    </section>
+
+    
+
+    <footer id="contact">
+        <div class="container text-center">
+            <p>&copy; 2025 Aqua World | Designed for an Amazing Experience</p>
+            <p>Follow us on:</p>
+            <div>
+                <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-light"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 Aqua World | Designed for an Amazing Experience</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

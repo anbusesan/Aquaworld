@@ -1,502 +1,881 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AquaWorld</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaWorld</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg">
-      <div class="container">
+  <body>
+    <header class="position-absolute w-100 top-0 start-0 z-3">
+      <div class="d-flex justify-content-between align-items-center px-3 py-2">
         <a href="/" class="navbar-brand d-flex align-items-center">
-          <img src="images/logo.png" width="70" alt="Logo" loading="lazy" class="d-inline-block align-top">
-          <span class="brand-text">AquaWorld</span>
+          <img
+            src="images/logo.png"
+            width="70"
+            alt="Logo"
+            loading="lazy"
+            class="d-inline-block align-top"
+          />
+          <span class="brand-text">AQUAWORLD</span>
         </a>
+        <div class="d-flex justify-content-center align-items-center g-2">
+          <button
+            class="btn btn-outline-light me-4 d-none d-md-block"
+            style="height: 35px"
+          >
+            Login
+          </button>
+          <button
+            class="btn btn-outline-light me-3 d-none d-md-block"
+            style="height: 35px"
+          >
+            Signup
+          </button>
+          <button
+            class="btn imag"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasScrolling"
+            aria-controls="offcanvasScrolling"
+          >
+            <span
+              ><img
+                src="images/hamburger5.jpg"
+                alt="hamburger"
+                class="hamb"
+                style="height: 35px"
+            /></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="myNavBar">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item active me-4">
-              <a href="#home" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item me-4">
-              <a href="#gallery" class="nav-link">Gallery Of Wonders</a>
-            </li>
-            <li class="nav-item me-4">
-              <a href="contactus.html" class="nav-link">Contact Us</a>
-            </li>
-            <li class="nav-item me-4">
-              <a href="#more" class="nav-link">More</a>
-            </li>
-            <li class="nav-item dropdown me-3">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Help
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><i class="fab fa-facebook me-2"></i>Facebook</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fab fa-youtube me-2"></i>Youtube</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fab fa-telegram me-2"></i>Telegram</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fab fa-whatsapp me-2"></i>Whatsapp</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fab fa-snapchat me-2"></i>Snapchat</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-ellipsis-h me-2"></i>Others</a></li>
-              </ul>
-            </li>
+    <div
+    class="offcanvas offcanvas-end custom-offcanvas w-10"
+    data-bs-scroll="true"
+    data-bs-backdrop="false"
+    tabindex="-1"
+    id="offcanvasScrolling"
+    aria-labelledby="offcanvasScrollingLabel"
+  >
+    <div class="offcanvas-header text-center">
+      <button
+        type="button"
+        class="btn-close text-white"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body pt-5 text-center">
+      <ul class="navbar-nav">
+        <li class="nav-item active me-4 mb-4">
+          <a href="#home" class="nav-link">HOME</a>
+        </li>
+        <li class="nav-item me-4 mb-4">
+          <a href="#gallery" class="nav-link">GALLERY OF WONDERS</a>
+        </li>
+        <li class="nav-item me-4 mb-4">
+          <a href="contactus.html" class="nav-link">CONTACT US</a>
+        </li>
+        <li class="nav-item me-4 mb-4">
+          <a href="#more" class="nav-link">MORE</a>
+        </li>
+        <li class="nav-item dropdown me-3 mb-4">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >Help</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"><i class="fab fa-facebook me-2"></i>Facebook</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fab fa-youtube me-2"></i>Youtube</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fab fa-telegram me-2"></i>Telegram</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fab fa-whatsapp me-2"></i>Whatsapp</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fab fa-snapchat me-2"></i>Snapchat</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-ellipsis-h me-2"></i>Others</a></li>
           </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div id="home" class="carousel slide car1" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <video class="d-block w-100" autoplay loop muted>
-          <source src="images/2558530-hd_1920_1080_25fps.mp4">
-        </video>
-      </div>
-      <div class="carousel-item">
-        <video class="d-block w-100" autoplay loop muted>
-          <source src="images/12887069_3840_2160_30fps.mp4">
-        </video>
-      </div>
-      <div class="carousel-item">
-        <video class="d-block w-100" autoplay loop muted>
-          <source src="images/WhatsApp Video 2025-01-09 at 05.35.20_942c5fd0.mp4">
-        </video>
-      </div>
-    </div>
-    <div class="carousel-caption d-flex justify-content-center align-items-center d-sm-block bgc aqua-quote">
-      <p>Journey Into The Wonders Of The Deep</p>
-    </div>
-  </div>
-
-  <section class="sec py-3 mb-3 text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5">
-          <h4 class="fw-bold text-center mb-4 mt-4">Welcome to Aqua World</h4>
-          <p>At Aqua World, we invite you to journey beneath the waves and explore the vibrant, awe-inspiring world of marine life. From shimmering coral reefs to the mesmerizing depths of the deep blue, our aquarium offers an immersive experience that connects you to the heart of the ocean.</p>
-          <p>Discover fascinating creatures from across the globe – playful dolphins, graceful jellyfish, exotic tropical fish, and the mighty sharks that rule the seas. Each exhibit tells a story, a tale of the oceans' beauty, fragility, and the need for conservation.</p>
-          <h3>Our Mission</h3>
-          <p>To celebrate marine life, educate the world, and protect our oceans for future generations.</p>
-
-          <a href="contactus.html" class="btn btn-lg btn-primary">Plan Your Visit Today</a>
-          <p class="mt-3 text-muted">Where Every Drop Tells a Story! 🌊</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="vedios">
-  <div class="text-black text-center">
-    <h1 class="special-heading">Mesmerizing video clips of our aquarium</h1>
-  </div>
-
-  <div class="categories container my-5">
-    <div class="row g-4">
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="category-box bg-light text-center p-3 rounded shadow">
-          <h3 class="text-primary">Jellyfish</h3>
-          <video class="d-block w-100" autoplay loop muted>
-            <source src="https://ik.imagekit.io/tmnlbyjqsc/Bootstrap_project/jellyfish.mp4?updatedAt=1737438580129">
-          </video>
-          <p>Jellyfish are nature's living art forms. Their glowing bioluminescence and timeless elegance make them an oceanic wonder!</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="category-box bg-light text-center p-3 rounded shadow">
-          <h3 class="text-primary">Seahorses</h3>
-          <video class="d-block w-100" autoplay loop muted>
-            <source src="images/seahorses.mp4">
-          </video>
-          <p>With delicate frames and horse-like appearance, seahorses symbolize oceanic elegance, with males birthing offspring.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="category-box bg-light text-center p-3 rounded shadow">
-          <h3 class="text-primary">Star Fish</h3>
-          <video class="d-block w-100" autoplay loop muted>
-            <source src="images/starfish.mp4">
-          </video>
-          <p>Starfish are remarkable marine creatures that regenerate arms and maintain balance in the ocean's ecosystem.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="category-box bg-light text-center p-3 rounded shadow">
-          <h3 class="text-primary">Sea Pens</h3>
-          <video class="d-block w-100" autoplay loop muted>
-            <source src="images/seapens.mp4">
-          </video>
-          <p>Sea pens are fascinating marine animals resembling quills, thriving in soft seabeds and playing a role in maintaining ocean ecosystems.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="category-box bg-light text-center p-3 rounded shadow">
-          <h3 class="text-primary">Coral Reef</h3>
-          <video class="d-block w-100" autoplay loop muted>
-            <source src="images/coralreef.mp4">
-          </video>
-          <p>Coral reefs are vibrant underwater ecosystems formed by tiny coral polyps. They support diverse marine life, protect coastlines, and are vital for ocean health.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="category-box bg-light text-center p-3 rounded shadow">
-            <h3 class="text-primary">Marine Mammals</h3>
-            <video class="d-block w-100" autoplay loop muted>
-              <source src="images/marinemammals.mp4">
-            </video>
-            <p>Marine mammals, like whales, dolphins, and seals, are warm-blooded ocean animals vital to marine ecosystems.</p>
-        </div>
-    </div>
-    </div>
-  </div>
-</section>
- 
-
-<section id="gallery" class="gallery-container bg-dark">
-  <div class="container">
-    <h2 class="mb-5 text-center">Aqua Creatures</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf1.jpg" alt="Clownfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Clownfish<br>This fish lives in coral reefs and is known for its symbiotic relationship with sea anemones.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf2.jpg" alt="Angelfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Angelfish<br>A vibrant fish that thrives in tropical waters, often seen near coral formations.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf3.jpg" alt="Lionfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Lionfish<br>This fish has striking patterns and venomous spines, making it both beautiful and dangerous.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf4.jpg" alt="Blue Tang">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Blue Tang<br>Known for its bright blue color, this fish is popular among aquarium enthusiasts.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf5.jpg" alt="Butterflyfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Butterflyfish<br>A delicate and colorful fish found in warm seas, often in shallow coral reefs.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf6.jpg" alt="Angelfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Angelfish<br>A vibrant fish that thrives in tropical waters, often seen near coral formations.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf7.jpg" alt="Clownfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Clownfish<br>This fish lives in coral reefs and is known for its symbiotic relationship with sea anemones.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf8.jpg" alt="Angelfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Angelfish<br>A vibrant fish that thrives in tropical waters, often seen near coral formations.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-new">
-          <img src="images/imgf9.jpg" alt="Lionfish">
-          <div class="overlay-new">
-            <p><strong>Fish Name:</strong> Lionfish<br>This fish has striking patterns and venomous spines, making it both beautiful and dangerous.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Student Discount Section -->
-<section class="student-discount-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <h2 class="discount-title mb-4">Student Special Discount</h2>
-        <p class="discount-description">
-          Exclusive discounts for students! Show your ID and enjoy amazing savings. 
-          Discover the wonders of Aqua World at an affordable price.
-        </p>
-        <p class="validity">*Valid until: <strong>31st March 2025</strong></p>
-
-        <!-- Testimonials -->
-        <div class="testimonials mt-4">
-          <h4 class="testimonial-title">What Students Are Saying</h4>
-          <div class="testimonial-slider">
-            <div class="testimonial-item">
-              <p class="testimonial-text">"Aqua World is an amazing place! This discount made it even better!"</p>
-              <p class="testimonial-author">- Anna, University of XYZ</p>
-            </div>
-            <div class="testimonial-item">
-              <p class="testimonial-text">"I had so much fun, and the discount made it so affordable!"</p>
-              <p class="testimonial-author">- Raj, ABC College</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="cta-button mt-4 text-center">
-          <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#studentModal">Claim Your Discount Now</button>
-        </div>
-      </div>
-
-      <!-- Right Side Content -->
-      <div class="col-md-6 text-center">
-        <div class="special-offer-box mb-4">
-          <h3 class="special-offer-title">Limited Time Offer!</h3>
-          <p class="special-offer-description">Get an additional 10% off on group bookings of 5 or more students!</p>
-          <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#groupDiscountModal">Group Discount Details</button>
-        </div>
-
-        <div class="save-box mx-auto">
-          <h3 class="save-text">SAVE</h3>
-          <h1 class="percentage">30%</h1>
-          <p class="validity-text">For Students</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Modal for Student Discount Form -->
-<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="studentModalLabel">Student Discount Registration</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>University/College</th>
-                <th>Student ID</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="text" class="form-control" placeholder="Enter Name"></td>
-                <td><input type="email" class="form-control" placeholder="Enter Email"></td>
-                <td><input type="text" class="form-control" placeholder="Enter College Name"></td>
-                <td><input type="text" class="form-control" placeholder="Enter Student ID"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#studentSuccessModal">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal for Group Discount Form -->
-<div class="modal fade" id="groupDiscountModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="studentModalLabel">Student Discount Registration</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>University/College</th>
-                <th>Student ID</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="text" class="form-control" placeholder="Enter Name"></td>
-                <td><input type="email" class="form-control" placeholder="Enter Email"></td>
-                <td><input type="text" class="form-control" placeholder="Enter College Name"></td>
-                <td><input type="text" class="form-control" placeholder="Enter Student ID"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#studentSuccessModal">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Success Modal for Student Discount -->
-<div class="modal fade" id="studentSuccessModal" tabindex="-1" aria-labelledby="studentSuccessModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content text-center p-4">
-      <div class="modal-header border-0">
-        <h5 class="modal-title w-100" id="studentSuccessModalLabel">🎉 Discount Claimed! 🎉</h5>
-      </div>
-      <div class="modal-body">
-        <p>Your student discount has been successfully registered!</p>
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-center">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Success Modal for Group Discount -->
-<div class="modal fade" id="groupSuccessModal" tabindex="-1" aria-labelledby="groupSuccessModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content text-center p-4">
-      <div class="modal-header border-0">
-        <h5 class="modal-title w-100" id="groupSuccessModalLabel">🎉 Group Discount Claimed! 🎉</h5>
-      </div>
-      <div class="modal-body">
-        <p>Your group discount has been successfully registered!</p>
-      </div>
-      <div class="modal-footer border-0 d-flex justify-content-center">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<section class="explore-more-section">
-  <h2 class="mb-5">Explore More</h2>
-  <div class="container">
-    <div class="row g-4 cen">
-      <div class="col-md-3">
-        <div class="card explore-more-card">
-          <img src="images/aquatunnel.png" alt="About Aqua World" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">About Aqua World</h5>
-            <p class="card-text">Learn about our vision, mission, and the wonders of Aqua World.</p>
-            <a href="about.html" class="btn-explore-more">KNOW MORE</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card explore-more-card">
-          <img src="images/highlightdol.jpg" alt="Highlights" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Highlights</h5>
-            <p class="card-text">Discover unique experiences, shows, and marine exhibits.</p>
-            <a href="highlights.html" class="btn-explore-more">EXPLORE</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card explore-more-card">
-          <img src="images/waterslidegame.jpg" alt="Games World" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Games World</h5>
-            <p class="card-text">Discover a realm of fun and excitement.</p>
-            <a href="games.html" class="btn-explore-more">RIDE</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card explore-more-card">
-          <img src="images/scoobadive.jpg" alt="Games World" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Virtual Tour</h5>
-            <p class="card-text">Discover a realm of fun and excitement.</p>
-            <a href="games.html" class="btn-explore-more">VISIT</a>
-          </div>
-        </div>
-      </div>
-    </div> 
-  </div>
-</section>
-
+        </li>
+      </ul>
   
-  <footer class="bg-dark text-white py-2">
-    <div class="container mt-2">
-        <div class="row text-center text-md-start align-items-center">
-            <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <h5 class="fw-bold">Our Address</h5>
-                <p>123 Ocean Drive, SeaWorld, Aquatic City</p>
-                <p>Email: <a href="mailto:info@marineworld.com" class="text-white text-decoration-underline">info@marineworld.com</a></p>
-                <p>Phone: <a href="tel:+1234567890" class="text-white text-decoration-underline">+1 234 567 890</a></p>
-            </div>
+      <!-- Buttons at bottom -->
+      <div class="d-flex flex-column align-items-center justify-content-center mt-4">
+        <button class="btn btn-primary mb-2 d-block d-md-none">Login</button>
+        <button class="btn btn-outline-primary d-block d-md-none">Signup</button>
+      </div>
+    </div>
+  </div>
   
-            <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <h5 class="fw-bold">Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-                    <li><a href="highlights.html" class="text-white text-decoration-none">Highlights</a></li>
-                    <li><a href="contactus.html" class="text-white text-decoration-none">Contact</a></li>
-                    <li><a href="games.html" class="text-white text-decoration-none">Games World</a></li>
-                    <li><a href="virtual.html" class="text-white text-decoration-none">Virtual Tour</a></li>
-                </ul>
-            </div>
   
-            <div class="col-12 col-md-4">
-                <h5 class="fw-bold">Connect with Us</h5>
-                <div>
-                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="text-white me-3 fs-4"><i class="fab fa-linkedin-in"></i></a>
+
+    <div id="home" class="carousel slide car1" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="d-block w-100" autoplay loop muted>
+            <source src="images/2558530-hd_1920_1080_25fps.mp4" />
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay loop muted>
+            <source src="images/12887069_3840_2160_30fps.mp4" />
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay loop muted>
+            <source
+              src="images/WhatsApp Video 2025-01-09 at 05.35.20_942c5fd0.mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <!-- Caption Container -->
+      <div
+        class="carousel-caption d-flex flex-column justify-content-center align-items-center bgc aqua-quote mt-4"
+      >
+        <p class="Deepsea">DEEPSEA WONDERS</p>
+        <p>Dive Into The Deep</p>
+        <p class="marine">NEPTUNE'S REALM</p>
+      </div>
+    </div>
+
+    <section class="sec py-3 mb-3 text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <h4 class="fw-bold text-center mb-4 mt-4">Welcome to Aqua World</h4>
+            <p>
+              At Aqua World, we invite you to journey beneath the waves and
+              explore the vibrant, awe-inspiring world of marine life. From
+              shimmering coral reefs to the mesmerizing depths of the deep blue,
+              our aquarium offers an immersive experience that connects you to
+              the heart of the ocean.
+            </p>
+            <p>
+              Discover fascinating creatures from across the globe – playful
+              dolphins, graceful jellyfish, exotic tropical fish, and the mighty
+              sharks that rule the seas. Each exhibit tells a story, a tale of
+              the oceans' beauty, fragility, and the need for conservation.
+            </p>
+            <h3>Our Mission</h3>
+            <p>
+              To celebrate marine life, educate the world, and protect our
+              oceans for future generations.
+            </p>
+
+            <a href="contactus.html" class="btn btn-lg btn-primary"
+              >Plan Your Visit Today</a
+            >
+            <p class="mt-3 text-muted">Where Every Drop Tells a Story! 🌊</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vedios">
+      <div class="text-black text-center">
+        <h1 class="special-heading">Mesmerizing video clips of our aquarium</h1>
+      </div>
+
+      <div class="categories container my-5">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="category-box bg-light text-center p-3 rounded shadow">
+              <h3 class="text-primary">Jellyfish</h3>
+              <video class="d-block w-100" autoplay loop muted>
+                <source
+                  src="https://ik.imagekit.io/tmnlbyjqsc/Bootstrap_project/jellyfish.mp4?updatedAt=1737438580129"
+                />
+              </video>
+              <p>
+                Jellyfish are nature's living art forms. Their glowing
+                bioluminescence and timeless elegance make them an oceanic
+                wonder!
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="category-box bg-light text-center p-3 rounded shadow">
+              <h3 class="text-primary">Seahorses</h3>
+              <video class="d-block w-100" autoplay loop muted>
+                <source src="images/seahorses.mp4" />
+              </video>
+              <p>
+                With delicate frames and horse-like appearance, seahorses
+                symbolize oceanic elegance, with males birthing offspring.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="category-box bg-light text-center p-3 rounded shadow">
+              <h3 class="text-primary">Star Fish</h3>
+              <video class="d-block w-100" autoplay loop muted>
+                <source src="images/starfish.mp4" />
+              </video>
+              <p>
+                Starfish are remarkable marine creatures that regenerate arms
+                and maintain balance in the ocean's ecosystem.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="category-box bg-light text-center p-3 rounded shadow">
+              <h3 class="text-primary">Sea Pens</h3>
+              <video class="d-block w-100" autoplay loop muted>
+                <source src="images/seapens.mp4" />
+              </video>
+              <p>
+                Sea pens are fascinating marine animals resembling quills,
+                thriving in soft seabeds and playing a role in maintaining ocean
+                ecosystems.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="category-box bg-light text-center p-3 rounded shadow">
+              <h3 class="text-primary">Coral Reef</h3>
+              <video class="d-block w-100" autoplay loop muted>
+                <source src="images/coralreef.mp4" />
+              </video>
+              <p>
+                Coral reefs are vibrant underwater ecosystems formed by tiny
+                coral polyps. They support diverse marine life, protect
+                coastlines, and are vital for ocean health.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="category-box bg-light text-center p-3 rounded shadow">
+              <h3 class="text-primary">Marine Mammals</h3>
+              <video class="d-block w-100" autoplay loop muted>
+                <source src="images/marinemammals.mp4" />
+              </video>
+              <p>
+                Marine mammals, like whales, dolphins, and seals, are
+                warm-blooded ocean animals vital to marine ecosystems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-container bg-dark">
+      <div class="container">
+        <h2 class="mb-5 text-center">Aqua Creatures</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf1.jpg" alt="Clownfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Clownfish<br />This fish lives in
+                  coral reefs and is known for its symbiotic relationship with
+                  sea anemones.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf2.jpg" alt="Angelfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Angelfish<br />A vibrant fish that
+                  thrives in tropical waters, often seen near coral formations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf3.jpg" alt="Lionfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Lionfish<br />This fish has
+                  striking patterns and venomous spines, making it both
+                  beautiful and dangerous.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf4.jpg" alt="Blue Tang" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Blue Tang<br />Known for its
+                  bright blue color, this fish is popular among aquarium
+                  enthusiasts.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf5.jpg" alt="Butterflyfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Butterflyfish<br />A delicate and
+                  colorful fish found in warm seas, often in shallow coral
+                  reefs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf6.jpg" alt="Angelfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Angelfish<br />A vibrant fish that
+                  thrives in tropical waters, often seen near coral formations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf7.jpg" alt="Clownfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Clownfish<br />This fish lives in
+                  coral reefs and is known for its symbiotic relationship with
+                  sea anemones.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf8.jpg" alt="Angelfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Angelfish<br />A vibrant fish that
+                  thrives in tropical waters, often seen near coral formations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-new">
+              <img src="images/imgf9.jpg" alt="Lionfish" />
+              <div class="overlay-new">
+                <p>
+                  <strong>Fish Name:</strong> Lionfish<br />This fish has
+                  striking patterns and venomous spines, making it both
+                  beautiful and dangerous.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Discount Section -->
+    <section class="student-discount-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <h2 class="discount-title mb-4">Student Special Discount</h2>
+            <p class="discount-description">
+              Exclusive discounts for students! Show your ID and enjoy amazing
+              savings. Discover the wonders of Aqua World at an affordable
+              price.
+            </p>
+            <p class="validity">
+              *Valid until: <strong>31st March 2025</strong>
+            </p>
+
+            <!-- Testimonials -->
+            <div class="testimonials mt-4">
+              <h4 class="testimonial-title">What Students Are Saying</h4>
+              <div class="testimonial-slider">
+                <div class="testimonial-item">
+                  <p class="testimonial-text">
+                    "Aqua World is an amazing place! This discount made it even
+                    better!"
+                  </p>
+                  <p class="testimonial-author">- Anna, University of XYZ</p>
                 </div>
+                <div class="testimonial-item">
+                  <p class="testimonial-text">
+                    "I had so much fun, and the discount made it so affordable!"
+                  </p>
+                  <p class="testimonial-author">- Raj, ABC College</p>
+                </div>
+              </div>
             </div>
-        </div>
-        <hr class="border-light">
-        <div class="row text-center mt-3">
-            <div class="col">
-                <p class="mt-1 fw-bold" style="font-size: 20px;">&copy; 2025 MarineWorld. All Rights Reserved.</p>
-                <p class="mb-2">Designed with <i class="fas fa-heart text-danger"></i> by MarineWorld Team.</p>
+
+            <!-- CTA Button -->
+            <div class="cta-button mt-4 text-center">
+              <button
+                class="btn btn-primary btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#studentModal"
+              >
+                Claim Your Discount Now
+              </button>
             </div>
+          </div>
+
+          <!-- Right Side Content -->
+          <div class="col-md-6 text-center">
+            <div class="special-offer-box mb-4">
+              <h3 class="special-offer-title">Limited Time Offer!</h3>
+              <p class="special-offer-description">
+                Get an additional 10% off on group bookings of 5 or more
+                students!
+              </p>
+              <button
+                class="btn btn-warning btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#groupDiscountModal"
+              >
+                Group Discount Details
+              </button>
+            </div>
+
+            <div class="save-box mx-auto">
+              <h3 class="save-text">SAVE</h3>
+              <h1 class="percentage">30%</h1>
+              <p class="validity-text">For Students</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Modal for Student Discount Form -->
+    <div
+      class="modal fade"
+      id="studentModal"
+      tabindex="-1"
+      aria-labelledby="studentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="studentModalLabel">
+              Student Discount Registration
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="table-responsive"
+              style="max-height: 400px; overflow-y: auto"
+            >
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>University/College</th>
+                    <th>Student ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Name"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Enter Email"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter College Name"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Student ID"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#studentSuccessModal"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Modal for Group Discount Form -->
+    <div
+      class="modal fade"
+      id="groupDiscountModal"
+      tabindex="-1"
+      aria-labelledby="studentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="studentModalLabel">
+              Student Discount Registration
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="table-responsive"
+              style="max-height: 400px; overflow-y: auto"
+            >
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>University/College</th>
+                    <th>Student ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Name"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Enter Email"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter College Name"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Student ID"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#studentSuccessModal"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <!-- Success Modal for Student Discount -->
+    <div
+      class="modal fade"
+      id="studentSuccessModal"
+      tabindex="-1"
+      aria-labelledby="studentSuccessModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <div class="modal-header border-0">
+            <h5 class="modal-title w-100" id="studentSuccessModalLabel">
+              🎉 Discount Claimed! 🎉
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>Your student discount has been successfully registered!</p>
+          </div>
+          <div class="modal-footer border-0 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal for Group Discount -->
+    <div
+      class="modal fade"
+      id="groupSuccessModal"
+      tabindex="-1"
+      aria-labelledby="groupSuccessModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <div class="modal-header border-0">
+            <h5 class="modal-title w-100" id="groupSuccessModalLabel">
+              🎉 Group Discount Claimed! 🎉
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>Your group discount has been successfully registered!</p>
+          </div>
+          <div class="modal-footer border-0 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="more" class="explore-more-section">
+      <h2 class="mb-5">Explore More</h2>
+      <div class="container">
+        <div class="row g-4 cen">
+          <div class="col-md-3">
+            <div class="card explore-more-card">
+              <img
+                src="images/aquatunnel.png"
+                alt="About Aqua World"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">About Aqua World</h5>
+                <p class="card-text">
+                  Learn about our vision, mission, and the wonders of Aqua
+                  World.
+                </p>
+                <a href="about.html" class="btn-explore-more">KNOW MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card explore-more-card">
+              <img
+                src="images/highlightdol.jpg"
+                alt="Highlights"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Highlights</h5>
+                <p class="card-text">
+                  Discover unique experiences, shows, and marine exhibits.
+                </p>
+                <a href="highlights.html" class="btn-explore-more">EXPLORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card explore-more-card">
+              <img
+                src="images/waterslidegame.jpg"
+                alt="Games World"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Games World</h5>
+                <p class="card-text">Discover a realm of fun and excitement.</p>
+                <a href="games.html" class="btn-explore-more">RIDE</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card explore-more-card">
+              <img
+                src="images/scoobadive.jpg"
+                alt="Games World"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Virtual Tour</h5>
+                <p class="card-text">Discover a realm of fun and excitement.</p>
+                <a href="virtual.html" class="btn-explore-more">VISIT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white py-2">
+      <div class="container mt-2">
+        <div class="row text-center text-md-start align-items-center">
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h5 class="fw-bold">Our Address</h5>
+            <p>123 Ocean Drive, SeaWorld, Aquatic City</p>
+            <p>
+              Email:
+              <a
+                href="mailto:info@marineworld.com"
+                class="text-white text-decoration-underline"
+                >info@marineworld.com</a
+              >
+            </p>
+            <p>
+              Phone:
+              <a
+                href="tel:+1234567890"
+                class="text-white text-decoration-underline"
+                >+1 234 567 890</a
+              >
+            </p>
+          </div>
+
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h5 class="fw-bold">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="about.html" class="text-white text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="highlights.html"
+                  class="text-white text-decoration-none"
+                  >Highlights</a
+                >
+              </li>
+              <li>
+                <a href="contactus.html" class="text-white text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="games.html" class="text-white text-decoration-none"
+                  >Games World</a
+                >
+              </li>
+              <li>
+                <a href="virtual.html" class="text-white text-decoration-none"
+                  >Virtual Tour</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h5 class="fw-bold">Connect with Us</h5>
+            <div>
+              <a href="#" class="text-white me-3 fs-4"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3 fs-4"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3 fs-4"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-3 fs-4"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="#" class="text-white me-3 fs-4"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-light" />
+        <div class="row text-center mt-3">
+          <div class="col">
+            <p class="mt-1 fw-bold" style="font-size: 20px">
+              &copy; 2025 MarineWorld. All Rights Reserved.
+            </p>
+            <p class="mb-2">
+              Designed with <i class="fas fa-heart text-danger"></i> by
+              MarineWorld Team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
